@@ -3,12 +3,12 @@ package sample;
 
 import javafx.fxml.FXMLLoader;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class Main2 {
             e.printStackTrace();
         }
         System.out.println("Compilation Done!!! ...");
-        //JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),ConnectionUtil.con();
+        /*//JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),ConnectionUtil.con();
         JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),ConnectionUtil.conDB());
         String query = "select * from employee";
         
@@ -49,8 +49,24 @@ public class Main2 {
             JasperExportManager.exportReportToPdfStream(print, os);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
+        try {
+            InputStream in = new FileInputStream( new File("C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample\\employee3.jrxml"));
+            JasperDesign jd = JRXmlLoader.load(in);
+            String sql = " select * from employee";
+            JRDesignQuery newQuery = new JRDesignQuery();
+            newQuery.setText(sql);
+            jd.setQuery(newQuery);
+            JasperReport jr = JasperCompileManager.compileReport(jd);
+            HashMap para = new HashMap();
+            JasperPrint j = JasperFillManager.fillReport(jr, para , ConnectionUtil.conDB());
+            JasperViewer.viewReport(j, false);
+            OutputStream os = new FileOutputStream(new File("C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample"));
+            JasperExportManager.exportReportToPdfStream(j, os);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
     }
