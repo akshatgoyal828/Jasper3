@@ -30,7 +30,7 @@ public class Main  {
         /*database = new DBConnection();
         connect = database.getConnection();*/
         map = new HashMap();
-        String sourceFileName = "C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample\\employee3.jrxml";
+        String sourceFileName = "C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample\\employee.jrxml";
         System.out.println("Compiling Report Design ...");
         try {
             //Compiling the jrxml
