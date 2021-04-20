@@ -62,6 +62,7 @@ public class Main2 {
         //Report2.printEmployee();
         //Report2.printparking();
         //Report2.printVisitor();
-        Report2.printInvoice();
+        //Report2.printInvoice();
+        Report2.printFinance();
     }
 }

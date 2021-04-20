@@ -125,4 +125,14 @@ public class Report2 {
         }
 
     }
+
+    public static void printFinance(){
+        sql = " select * from finance ";
+        try {
+            printReport("finance");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
