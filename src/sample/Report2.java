@@ -115,4 +115,14 @@ public class Report2 {
         }
 
     }
+
+    public static void printInvoice(){
+        sql = " SELECT CONCAT(visitor.FirstName, ' ',visitor.LastName) AS Name,bill.Bill_ID,Rent,Extra_Charges,Payment_Mode,Tax,Total FROM customer,visitor,bill WHERE customer.visitor_ID=visitor.visitor_ID AND bill.bill_ID=customer.bill_ID";
+        try {
+            printReport("Invoice");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

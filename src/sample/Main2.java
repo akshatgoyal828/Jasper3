@@ -61,6 +61,7 @@ public class Main2 {
     public static void main(String[] args) throws JRException{
         //Report2.printEmployee();
         //Report2.printparking();
-        Report2.printVisitor();
+        //Report2.printVisitor();
+        Report2.printInvoice();
     }
 }
