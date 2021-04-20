@@ -26,8 +26,7 @@ public class Main2 {
 
 
     public static void mainTemp(String[] args) throws JRException {
-        /*database = new DBConnection();
-        connect = database.getConnection();*/
+
         ;
         String sourceFileName = "C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample\\employee.jrxml";
         System.out.println("Compiling Report Design ...");
@@ -38,17 +37,6 @@ public class Main2 {
             e.printStackTrace();
         }
         System.out.println("Compilation Done!!! ...");
-        /*//JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),ConnectionUtil.con();
-        JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),ConnectionUtil.conDB());
-        String query = "select * from employee";
-        
-        JasperViewer.viewReport(print, false);
-        try {
-            OutputStream os = new FileOutputStream( new File( "\\reports"));
-            JasperExportManager.exportReportToPdfStream(print, os);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }*/
 
         try {
             InputStream in = new FileInputStream(new File("C:\\Users\\hp\\IdeaProjects\\Jasper3\\src\\sample\\employee.jrxml"));
@@ -71,6 +59,8 @@ public class Main2 {
     }
 
     public static void main(String[] args) throws JRException{
-        Report2.printEmployee();
+        //Report2.printEmployee();
+        //Report2.printparking();
+        Report2.printVisitor();
     }
 }

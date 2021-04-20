@@ -38,7 +38,7 @@ public class Report2 {
         String sourceFileName = path + "ReportDesign\\" + report + ".jrxml";
         System.out.println("Compiling Report Design ...");
         try {
-            //Compiling the jrxml
+            //Compiling the jrxml and creating a Jasper type object
             jasperReport =  JasperCompileManager.compileReportToFile(sourceFileName);
         } catch (JRException e) {
             e.printStackTrace();
@@ -77,10 +77,39 @@ public class Report2 {
         }
 
     }
-    public static void printEmployee( String startfrom, String till){
-        sql = " select * from employee where joining between" + startfrom + " and " + till;
+    public static void printEmployee( String startDate, String endDate){
+        sql = " select * from employee where joining between" + startDate + " and " + endDate;
         try {
             printReport("employee");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void printparking(){
+        sql = " select * from parking_slot";
+        try {
+            printReport("parking");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void printVisitor(){
+        sql = " select * from visitor";
+        try {
+            printReport("visitors");
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static void printattendance(){
+        sql = " select * from visitor";
+        try {
+            printReport("visitors");
         } catch (JRException e) {
             e.printStackTrace();
         }

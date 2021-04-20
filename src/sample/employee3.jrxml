@@ -90,6 +90,13 @@
 					</textElement>
 					<text><![CDATA[Employee Details]]></text>
 				</staticText>
+				<staticText>
+					<reportElement x="20" y="60" width="234" height="30" forecolor="#FFFFFF" uuid="b667229b-3fbb-4666-8cae-bfe41310445b"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[The employee list for the current month]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</title>
@@ -117,129 +124,291 @@
 		<band height="200" splitType="Stretch">
 			<property name="local_mesure_unitheight" value="pixel"/>
 			<componentElement>
-				<reportElement x="0" y="0" width="555" height="200" uuid="f198c960-c06e-4373-8d7a-69567a070374">
+				<reportElement x="0" y="0" width="555" height="200" isRemoveLineWhenBlank="true" uuid="f198c960-c06e-4373-8d7a-69567a070374">
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
 					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="tableDataset" uuid="26235775-94f6-421e-b615-7aaf914b8ef8">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="90" uuid="ad1074d4-c3b1-465a-ac4c-4f6e36e3ad46">
-						<jr:tableHeader style="Table_TH" height="30"/>
-						<jr:tableFooter style="Table_TH" height="30"/>
+					<jr:column width="111" uuid="ad1074d4-c3b1-465a-ac4c-4f6e36e3ad46">
+						<jr:tableHeader style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableFooter>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="4a9c41c0-0f89-4adc-a23d-a7b4caae679c"/>
+								<reportElement mode="Transparent" x="0" y="0" width="111" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="4a9c41c0-0f89-4adc-a23d-a7b4caae679c"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+								</box>
 								<textElement textAlignment="Center">
 									<font size="14" isBold="true"/>
 								</textElement>
 								<text><![CDATA[FirstName]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:columnFooter style="Table_CH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnFooter>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement key="" x="0" y="0" width="90" height="30" uuid="7e8ae78b-0a6c-413b-8c01-26d0d6dc64c1"/>
-								<box leftPadding="2"/>
-								<textElement>
+								<reportElement key="" x="0" y="0" width="111" height="30" uuid="7e8ae78b-0a6c-413b-8c01-26d0d6dc64c1"/>
+								<box leftPadding="2">
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center">
 									<font fontName="Arial" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="36ec68fb-09dc-4582-b304-5b61ee757659">
-						<jr:tableHeader style="Table_TH" height="30"/>
-						<jr:tableFooter style="Table_TH" height="30"/>
+					<jr:column width="111" uuid="36ec68fb-09dc-4582-b304-5b61ee757659">
+						<jr:tableHeader style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableFooter>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="1b2b7ccd-397a-4e64-a146-ecec56686707"/>
+								<reportElement mode="Transparent" x="0" y="0" width="111" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="1b2b7ccd-397a-4e64-a146-ecec56686707"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+								</box>
 								<textElement textAlignment="Center">
 									<font size="14" isBold="true"/>
 								</textElement>
 								<text><![CDATA[LastName]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:columnFooter style="Table_CH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnFooter>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement key="" x="0" y="0" width="90" height="30" uuid="3bc99cc0-3356-44b0-aacb-3a62dc1916ea"/>
-								<box leftPadding="2"/>
-								<textElement>
+								<reportElement key="" x="0" y="0" width="111" height="30" uuid="3bc99cc0-3356-44b0-aacb-3a62dc1916ea"/>
+								<box leftPadding="2">
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center">
 									<font fontName="Arial" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="c7fd6f7f-7761-48d3-8106-65d8efacc588">
-						<jr:tableHeader style="Table_TH" height="30"/>
-						<jr:tableFooter style="Table_TH" height="30"/>
+					<jr:column width="111" uuid="c7fd6f7f-7761-48d3-8106-65d8efacc588">
+						<jr:tableHeader style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableFooter>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="77c12981-e810-4e3b-bf86-0a2373de5f4a"/>
+								<reportElement mode="Transparent" x="0" y="0" width="111" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="77c12981-e810-4e3b-bf86-0a2373de5f4a"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+								</box>
 								<textElement textAlignment="Center">
 									<font size="14" isBold="true"/>
 								</textElement>
 								<text><![CDATA[Designation]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:columnFooter style="Table_CH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnFooter>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement key="" x="0" y="0" width="90" height="30" uuid="1ea10b16-987d-416b-b57a-1661879c69b9"/>
-								<box leftPadding="2"/>
-								<textElement>
+								<reportElement key="" x="0" y="0" width="111" height="30" uuid="1ea10b16-987d-416b-b57a-1661879c69b9"/>
+								<box leftPadding="2">
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center">
 									<font fontName="Arial" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{Designation}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="915a10f4-19fb-4e6c-8968-de38673ae5b7">
-						<jr:tableHeader style="Table_TH" height="30"/>
-						<jr:tableFooter style="Table_TH" height="30"/>
+					<jr:column width="111" uuid="915a10f4-19fb-4e6c-8968-de38673ae5b7">
+						<jr:tableHeader style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableFooter>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="1f7c15b5-d6d0-403b-a134-cd316193e2c0"/>
+								<reportElement mode="Transparent" x="0" y="0" width="111" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="1f7c15b5-d6d0-403b-a134-cd316193e2c0"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+								</box>
 								<textElement textAlignment="Center">
 									<font size="14" isBold="true"/>
 								</textElement>
 								<text><![CDATA[Phone]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:columnFooter style="Table_CH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnFooter>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement key="" x="0" y="0" width="90" height="30" uuid="9e9cb9e7-c02e-40fc-ab3c-b158fc2f8a0c"/>
-								<box leftPadding="2"/>
-								<textElement>
+								<reportElement key="" x="0" y="0" width="111" height="30" uuid="9e9cb9e7-c02e-40fc-ab3c-b158fc2f8a0c"/>
+								<box leftPadding="2">
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center">
 									<font fontName="Arial" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{Phone}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="9295a5c6-966a-482b-ad2e-0574d4486b6d">
-						<jr:tableHeader style="Table_TH" height="30"/>
-						<jr:tableFooter style="Table_TH" height="30"/>
+					<jr:column width="111" uuid="9295a5c6-966a-482b-ad2e-0574d4486b6d">
+						<jr:tableHeader style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table_TH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableFooter>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="90" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="5bdfdf23-e893-4719-ac80-51f551db725c"/>
+								<reportElement mode="Transparent" x="0" y="0" width="111" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="5bdfdf23-e893-4719-ac80-51f551db725c"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#006699"/>
+								</box>
 								<textElement textAlignment="Center">
 									<font size="14" isBold="true"/>
 								</textElement>
 								<text><![CDATA[Shift]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:columnFooter style="Table_CH" height="30">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnFooter>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement key="" x="0" y="0" width="90" height="30" uuid="a6876970-ef77-4792-a2db-e732a8b06504"/>
-								<box leftPadding="2"/>
-								<textElement>
+								<reportElement key="" x="0" y="0" width="111" height="30" uuid="a6876970-ef77-4792-a2db-e732a8b06504"/>
+								<box leftPadding="2">
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center">
 									<font fontName="Arial" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{Shift}]]></textFieldExpression>
